@@ -5,7 +5,7 @@
 * {
     
     font-size: 25px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:rgb(0, 0, 0);
 }
 
@@ -39,12 +39,15 @@ h1 {
     padding: 10px;
     width: max-content;
     flex: 1 0;
+    border-radius: 20px;
+    
 }
 
 header {
     text-align: center;
     padding: 10px;
     background-color: burlywood;
+    border-radius: 20px;
 }
 
 h3 {
@@ -59,3 +62,13 @@ h4 {
     padding: 10px;
 }
 
+p {
+    padding: 2px;
+    color:rgb(66, 66, 63);
+
+}
+
+.card:hover {
+    box-shadow: 0 0 11px rgb(194, 173, 173); 
+    transform: scale(1.1, 1.1);
+}
