@@ -40,7 +40,7 @@ const addEmployees = () => {
         },
         {
             name: "github",
-            message: "What is your Github username?",
+            message: "What is the Engineer's Github username?",
             type: "input",
             when: (answers) => answers.role === "Engineer",
         },
@@ -55,7 +55,19 @@ const addEmployees = () => {
             message: "Are there more employees?",
             type: "confirm",
         }
-    ])
+    ]).then(answers => {
+        employees.push(answers);
+        // console.log(employees);
+
+        if (answers.addMore) {
+            addEmployees();
+        } else if (!employees.some(employee => employee.role === "Manager")) {
+            console.log("You must add a Manager!");
+            addEmployees();
+        } else {
+            console.log(employees);
+        }
+    })
 }
 
 
