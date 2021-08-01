@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./lib/generateHTML');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+const Manager = require('./lib/manager');
 
 
 const employees = [];
@@ -69,6 +72,7 @@ const addEmployees = () => {
             addEmployees();
         } else {
             console.log(employees);
+            sortEmployeeArray(employees);
         }
     })
 }
@@ -81,6 +85,30 @@ function writeToFile (data) {
         }
     })
 }
+
+function sortEmployeeArray(data) {
+    const managerArray = data.filter(function (manager) {
+        return manager.role == 'Manager';
+    }).map(employee => new Manager(employee.employeeName, employee.id, employee.email, employee.officeNumber))
+    
+    // console.log(managerArray[0]);
+
+    const engineerArray = data.filter(function (engineer) {
+        return engineer.role == 'Engineer';
+    }).map(employee => new Engineer(employee.employeeName, employee.id, employee.email, employee.github))
+
+    console.log(engineerArray);
+
+    const internArray = data.filter(function(intern) {
+        return intern.role == "Intern";
+    })
+
+    
+}
+
+
+
+
 
 
 function init() {
