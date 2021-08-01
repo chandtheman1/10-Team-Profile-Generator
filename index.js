@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateHTML = require('./lib/generateHTML');
+
 
 const employees = [];
 
@@ -70,9 +73,19 @@ const addEmployees = () => {
     })
 }
 
+function writeToFile (data) {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.error(err);
+            return
+        }
+    })
+}
+
 
 function init() {
     addEmployees();
+    writeToFile(generateHTML.generateHTML());
 }
 
 init();
