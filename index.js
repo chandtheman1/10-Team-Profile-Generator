@@ -78,6 +78,8 @@ const addEmployees = () => {
     })
 }
 
+//filters the inquirer user arrays into manager array, intern array and engineer array
+//then it creates objects using sub classes and creates Div html files to append 
 
 function sortEmployeeArray(data) {
 
@@ -117,6 +119,8 @@ function writeToFile (data) {
     })
 }
 
+
+//append div tags
 function createManagerHTML (data) {
     fs.appendFile('./dist/index.html', generateHTML.generateManager(data), err => {
         if (err) {
@@ -144,6 +148,7 @@ function createInternHTML (data) {
     })
 }
 
+//appends the closing tags for the HTML file
 function createClosingHTML() {
     fs.appendFile('./dist/index.html', generateHTML.closingHTML(), err => {
         if (err) {
