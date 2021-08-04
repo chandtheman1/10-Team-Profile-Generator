@@ -76,8 +76,28 @@ const addEmployees = () => {
     })
 }
 
+// function sortEmployeeArrayPromise(employees) { 
+//     return Promise((resolve, reject) => {
+//         if (employees = []) {
+//             reject("Empty");
+//         } else {
+//             resolve("Not empty");
+//         }
+//     })
+// }
+
+// const sortEmployeeArrayPromise = new Promise((resolve, reject) =>{
+//     if (employees = []) {
+//             reject("Empty");
+//         } else {
+//             resolve("Not empty");
+//         }
+// })
+
+
+
 function sortEmployeeArray(data) {
-    
+
     const managerArray = data.filter(function (manager) {
         return manager.role == 'Manager';
     }).map(employee => new Manager(employee.name, employee.id, employee.email, employee.officeNumber));
