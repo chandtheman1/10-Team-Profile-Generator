@@ -28,7 +28,7 @@ It will create the HTML file in:
 
 ## Demo
 
-[Demo link](https://drive.google.com/file/d/15sZKYhd9cKD-lElHWscS_M8mHqshgHtS/view)
+[Demo link](https://drive.google.com/file/d/15sZKYhd9cKD-lElHWscS_M8mHqshgHtS/view?usp=sharing)
 
 ## How to test it
 
