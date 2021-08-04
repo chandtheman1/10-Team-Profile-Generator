@@ -4,6 +4,7 @@ const generateHTML = require('./lib/generateHTML');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
+const { create } = require('domain');
 
 
 const employees = [];
@@ -103,7 +104,7 @@ function sortEmployeeArray(data) {
     for (let i = 0; i < internArray.length; i++) {
         createInternHTML(internArray[i]);
     }
-
+    
 }
 
 //creates index.html file and appends the data
@@ -143,7 +144,7 @@ function createInternHTML (data) {
     })
 }
 
-function createClosingHTML () {
+function createClosingHTML() {
     fs.appendFile('./dist/index.html', generateHTML.closingHTML(), err => {
         if (err) {
             console.error(err);
