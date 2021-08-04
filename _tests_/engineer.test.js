@@ -7,6 +7,25 @@ describe("Engineer", () => {
     });
 
     describe("Constructor", () => {
+
+        it("can set the name", () => {
+            const testValue = "Chandler";
+            const test = new Engineer(testValue);
+            expect(test.name).toBe(testValue);
+        });
+
+        it("can set the ID", () => {
+            const testValue = 1;
+            const test = new Engineer("Chandler", testValue);
+            expect(test.id).toBe(testValue);
+        });
+
+        it("can set email", () => {
+            const testValue = "welcome@hello.com";
+            const test = new Engineer("Chandler", 1, testValue);
+            expect(test.email).toBe(testValue);
+        });
+
         it("can set Github", () => {
             const testValue = "chandtheman1"
             const test = new Engineer("Chandler", 1, "welcome@hello.com", testValue);
