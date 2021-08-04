@@ -11,7 +11,7 @@ const employees = [];
 const addEmployees = () => {
     inquirer.prompt([
         {
-            name: "employeeName",
+            name: "name",
             message: "What is the employee's name?",
             type: "input"
         },
@@ -89,19 +89,28 @@ function writeToFile (data) {
 function sortEmployeeArray(data) {
     const managerArray = data.filter(function (manager) {
         return manager.role == 'Manager';
-    }).map(employee => new Manager(employee.employeeName, employee.id, employee.email, employee.officeNumber))
+    });
     
-    // console.log(managerArray[0]);
+    // const managerClass = managerArray.map(employee => new Manager(employee.name, employee.id, employee.email, employee.officeNumber));
+    // console.log(managerClass);
+
+    // const manager2 = managerClass.forEach(element => {
+    //     createManagerHTML (element)
+    // });
 
     const engineerArray = data.filter(function (engineer) {
         return engineer.role == 'Engineer';
-    }).map(employee => new Engineer(employee.employeeName, employee.id, employee.email, employee.github))
+    }).map(employee => new Engineer(employee.name, employee.id, employee.email, employee.github));
 
-    console.log(engineerArray);
+    for (let i = 0; i < engineerArray.length; i++) {
+        console.log(engineerArray[i]);
+    }
+
+    // console.log(engineerArray);
 
     const internArray = data.filter(function(intern) {
         return intern.role == "Intern";
-    })
+    }).map(employee => new Intern(employee.name,employee.id, employee.email, employee.officeNumber));
 
     
 }
@@ -109,6 +118,11 @@ function sortEmployeeArray(data) {
 
 
 
+function createManagerHTML (data) {
+    data.forEach(element => { generateHTML.generateManager(element)
+        
+    });
+}
 
 
 function init() {
