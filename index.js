@@ -71,7 +71,6 @@ const addEmployees = () => {
             console.log("You must add a Manager!");
             addEmployees();
         } else {
-            console.log(employees);
             sortEmployeeArray(employees);
             createClosingHTML();
         }
