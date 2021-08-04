@@ -24,7 +24,7 @@ Note, your team must have a manager role.
 It will create the HTML file in:
 >./dist folder
 
-![generated html](./assets/images/node.png)
+![generated html](./assets/images/indexhtml.png)
 
 ## Demo
 
