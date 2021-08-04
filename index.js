@@ -72,28 +72,10 @@ const addEmployees = () => {
         } else {
             console.log(employees);
             sortEmployeeArray(employees);
+            createClosingHTML();
         }
     })
 }
-
-// function sortEmployeeArrayPromise(employees) { 
-//     return Promise((resolve, reject) => {
-//         if (employees = []) {
-//             reject("Empty");
-//         } else {
-//             resolve("Not empty");
-//         }
-//     })
-// }
-
-// const sortEmployeeArrayPromise = new Promise((resolve, reject) =>{
-//     if (employees = []) {
-//             reject("Empty");
-//         } else {
-//             resolve("Not empty");
-//         }
-// })
-
 
 
 function sortEmployeeArray(data) {
@@ -174,7 +156,6 @@ function createClosingHTML () {
 function init() {
     addEmployees();
     writeToFile(generateHTML.generateHTML());
-    createClosingHTML();
 }
 
 init();
