@@ -161,10 +161,20 @@ function createInternHTML (data) {
     })
 }
 
+function createClosingHTML () {
+    fs.appendFile('./dist/index.html', generateHTML.closingHTML(), err => {
+        if (err) {
+            console.error(err);
+            return
+        }
+    })
+}
+
 
 function init() {
     addEmployees();
     writeToFile(generateHTML.generateHTML());
+    createClosingHTML();
 }
 
 init();
